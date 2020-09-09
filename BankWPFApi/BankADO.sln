@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankADO", "BankADO\BankADO.csproj", "{84744E52-14C9-44DF-851D-65B4E2CE951A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handle", "Handle\Handle.csproj", "{4ECE042E-DB65-4289-8E00-5AB89D6B6674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculate", "Calculate\Calculate.csproj", "{F4788810-8E12-4E15-BF4A-2A816A29AE3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84744E52-14C9-44DF-851D-65B4E2CE951A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84744E52-14C9-44DF-851D-65B4E2CE951A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84744E52-14C9-44DF-851D-65B4E2CE951A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84744E52-14C9-44DF-851D-65B4E2CE951A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ECE042E-DB65-4289-8E00-5AB89D6B6674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ECE042E-DB65-4289-8E00-5AB89D6B6674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ECE042E-DB65-4289-8E00-5AB89D6B6674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ECE042E-DB65-4289-8E00-5AB89D6B6674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4788810-8E12-4E15-BF4A-2A816A29AE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4788810-8E12-4E15-BF4A-2A816A29AE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4788810-8E12-4E15-BF4A-2A816A29AE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4788810-8E12-4E15-BF4A-2A816A29AE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6239975-8C1D-4D23-BD1A-C02D7C04C217}
+	EndGlobalSection
+EndGlobal

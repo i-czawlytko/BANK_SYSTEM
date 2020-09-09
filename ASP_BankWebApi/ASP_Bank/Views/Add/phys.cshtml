@@ -1,0 +1,25 @@
+﻿
+@using ASP_Bank.Entitys;
+
+@{
+    Layout = "_Layout";
+}
+
+<div>
+    <form action="GetDataFromViewField" method="post">
+        <input type="hidden" value="phys" name="client_type" />
+        <label>Ф.И.О:</label> <br />
+        <input type="text" name="fullName" required/><br />
+        <label>Дата рождения:</label> <br />
+        <input type="date" name="birthDate" required/><br />
+        <p>
+            <input type="submit" class="add_button" style="width:200px" value="Создать" />
+        </p>
+        
+    </form>
+</div>
+
+
+@section Menu {
+    <div class="acc_button"><a href="javascript:history.back()"> Назад</a></div>
+}

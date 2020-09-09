@@ -1,0 +1,19 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+<div class="log_nav">
+    <a herf="#">@User.Identity.Name в системе</a>
+    <form method="post" asp-controller="Account" asp-action="Logout" id="logoutform" asp-antiforgery="true">
+        @*<input type="submit" value="Выход"/>*@
+        <a href="#" onclick="document.getElementById('logoutform').submit()">Выход</a>
+    </form>
+</div>
+}
+else
+{
+    <div class="log_nav">
+        <a href="/Account/Login" class="log_button">Вход</a>
+        <a href="/Account/Register" class="log_button">Регистрация </a>
+    </div>
+}
+
+

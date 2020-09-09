@@ -1,0 +1,121 @@
+﻿@using ASP_Bank.Entitys;
+
+@{
+    Layout = "_Layout";
+}
+
+    <div>
+        @functions {
+            string BooltoStr(bool value)
+            {
+                if (value) return "Да";
+                else return "Нет";
+            }
+        }
+
+        @if (ViewBag.AccountType == "giro")
+        {
+            <p>Список счетов до востребования клиента:</p>
+            <table>
+
+                <tr>
+                    <th style="width: 50px;">ID</th>
+                    <th style="width: 200px;">Сумма</th>
+                    <th style="width: 200px;">Дата открытия</th>
+                </tr>
+
+
+                @foreach (Giros acc in ViewBag.Giros)
+                {
+                    <tr onclick="location.href='/Handle/giro?client_type=@ViewBag.client_type&acc_id=@acc.id'">
+                        <td>@acc.id</td>
+                        <td>@acc.amount</td>
+                        <td>@acc.create_date.ToString("dd.MM.yyyy")</td>
+                    </tr>
+                }
+            </table>
+        }
+        else if (ViewBag.AccountType == "deposit")
+        {
+            <p>Список счетов-депозитов клиента:</p>
+            <table>
+
+                <tr>
+                    <th style="width: 50px;">ID</th>
+                    <th style="width: 200px;">Сумма</th>
+                    <th style="width: 50px;">Проценты</th>
+                    <th style="width: 50px;">Кап.</th>
+                    <th style="width: 200px;">Дата открытия</th>
+                </tr>
+
+
+                @foreach (Deposit acc in ViewBag.Deposits)
+                {
+                    <tr onclick="location.href='/Handle/deposit?client_type=@ViewBag.client_type&acc_id=@acc.id'">
+                        <td>@acc.id</td>
+                        <td>@acc.amount</td>
+                        <td>@acc.percent</td>
+                        <td>@BooltoStr(acc.cap)</td>
+                        <td>@acc.create_date.ToString("dd.MM.yyyy")</td>
+                    </tr>
+                }
+
+            </table>
+        }
+
+        else if (ViewBag.AccountType == "credit")
+        {
+            <p>Список кредитов клиента:</p>
+            <table>
+
+                <tr>
+                    <th style="width: 50px;">ID</th>
+                    <th style="width: 200px;">Сумма</th>
+                    <th style="width: 50px;">Проценты</th>
+                    <th style="width: 200px;">Дата открытия</th>
+                </tr>
+
+
+                @foreach (Credits acc in ViewBag.Credits)
+                {
+                    <tr onclick="location.href='/Handle/credit?client_type=@ViewBag.client_type&acc_id=@acc.id'">
+                        <td>@acc.id</td>
+                        <td>@acc.amount</td>
+                        <td>@acc.percent</td>
+                        <td>@acc.create_date.ToString("dd.MM.yyyy")</td>
+                    </tr>
+                }
+
+            </table>
+        }
+        else
+        {
+            <p>Клиент: @ViewBag.ClientName. Пожалуйста, выберите тип счетов для отображения</p>
+        }
+
+
+    </div>
+
+
+@section Menu {
+    <div class="acc_button"><a href="/Bank/Accounts?client_type=@ViewBag.client_type&cl_id=@ViewBag.client_id&account_type=giro">До востребования</a></div>
+    <div class="acc_button"><a href="/Bank/Accounts?client_type=@ViewBag.client_type&cl_id=@ViewBag.client_id&account_type=deposit" >Депозиты</a></div>
+    <div class="acc_button"><a href="/Bank/Accounts?client_type=@ViewBag.client_type&cl_id=@ViewBag.client_id&account_type=credit">Кредиты</a></div>
+
+    @if (ViewBag.AccountType == "giro")
+    {
+        <div class="add_button"><a href="/Add/GetAccFromViewField?acc_type=giro&client_type=@ViewBag.client_type&client_id=@ViewBag.client_id">Добавить счёт</a></div>
+    }
+    else if (ViewBag.AccountType == "deposit")
+    {
+        <div class="add_button"><a href="/Add/deposit?client_type=@ViewBag.client_type&client_id=@ViewBag.client_id">Добавить депозит</a></div>
+    }
+    else if (ViewBag.AccountType == "credit")
+    {
+        <div class="add_button"><a href="/Add/credit?client_type=@ViewBag.client_type&client_id=@ViewBag.client_id">Добавить кредит</a></div>
+    }
+    else
+    {
+
+    }
+}

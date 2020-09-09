@@ -1,0 +1,52 @@
+﻿@using ASP_Bank.Entitys;
+
+@{
+    Layout = "_Layout";
+}
+
+    <div>
+        @functions {
+            string BooltoStr(bool value)
+            {
+                if (value) return "Да";
+                else return "Нет";
+            }
+        }
+
+        <p>
+            Владелец: @ViewBag.owner_name
+        </p>
+
+        <p>
+            Сумма на депозите: @ViewBag.CurrentDepos.amount
+        </p>
+
+        <p>
+            Процент: @ViewBag.CurrentDepos.percent
+        </p>
+
+        <p>
+            Дата открытия: @ViewBag.CurrentDepos.create_date.ToString("dd.MM.yyyy")
+        </p>
+
+        <p>
+            Капитализация: @BooltoStr(ViewBag.CurrentDepos.cap)
+        </p>
+
+        <form method="post">
+
+            <label>Предполагаемая дата снятия:</label> <br />
+            <input type="date" name="est_date" required /><br />
+
+            <input type="submit" value="Рассчитать" class="acc_button" style="width:200px" />
+        </form>
+
+        <p>
+            Сумма на депозите к расчетной дате будет составлять: @ViewBag.EstAmount
+        </p>
+    </div>
+
+
+@section Menu {
+    <div class="acc_button"><a href="javascript:history.back()"> Назад</a></div>
+}

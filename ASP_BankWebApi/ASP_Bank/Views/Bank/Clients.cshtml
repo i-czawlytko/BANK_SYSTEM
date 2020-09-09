@@ -1,0 +1,78 @@
+﻿@using ASP_Bank.Entitys;
+
+@{
+    Layout = "_Layout";
+}
+
+<div>
+
+    @if (ViewBag.client_type == "phys")
+    {
+        <table>
+            <tr>
+                <th style="width: 50px;">ID</th>
+                <th style="width: 200px;">Ф.И.О.</th>
+                <th style="width: 200px;">Дата рождения</th>
+            </tr>
+
+
+            @foreach (PhysClients client in ViewBag.PhysClients)
+            {
+                <tr onclick="location.href='/Bank/Accounts?client_type=@ViewBag.client_type&cl_id=@client.id'">
+                    <td>@client.id</td>
+                    <td>@client.client_name</td>
+                    <td>@client.birth_date.ToString("dd.MM.yyyy")</td>
+                </tr>
+            }
+        </table>
+    }
+
+    else if (ViewBag.client_type == "company")
+    {
+        @if (ViewBag.ParentID != 0) {
+            <div>Список дочерних организаций компании "@ViewBag.ParentName"</div>
+        }
+
+        <table>
+            <tr>
+                <th style="width: 50px;">ID</th>
+                <th style="width: 200px;">Название</th>
+                <th style="width: 200px;">Дата создания</th>
+            </tr>
+
+
+            @foreach (CompanyClients client in ViewBag.CompanyClients)
+            {
+                <tr onclick="location.href='/Bank/Accounts?client_type=@ViewBag.client_type&cl_id=@client.id'">
+                    <td>@client.id</td>
+                    <td>@client.company_name</td>
+                    <td>@client.create_date.ToString("dd.MM.yyyy")</td>
+                    <td onclick="event.stopPropagation();location.href = '/Bank/Clients?client_type=@ViewBag.client_type&parent_id=@client.id';">...</td>
+                </tr>
+
+            }
+        </table>
+    }
+
+    else
+    {
+        <p>Не определен тип клиентов</p>
+    }
+
+
+
+</div>
+
+
+@section Menu {
+    @if (ViewBag.client_type == "phys")
+    {
+        <div class="acc_button"><a href="/Add/phys"> Добавить физ.лицо</a></div>
+    }
+    else if (ViewBag.client_type == "company")
+    {
+        <div class="acc_button"><a href="/Add/company?parent_id=@ViewBag.ParentID"> Добавить юр.лицо</a></div>
+        <div class="acc_button"><a href="javascript:history.back()"> Назад</a></div>
+    }
+
+}

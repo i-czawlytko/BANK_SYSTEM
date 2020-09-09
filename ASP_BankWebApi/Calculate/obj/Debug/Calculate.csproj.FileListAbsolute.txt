@@ -1,0 +1,12 @@
+C:\Users\sbokubant\source\repos\ASP_Bank\Calculate\bin\Debug\Calculate.dll
+C:\Users\sbokubant\source\repos\ASP_Bank\Calculate\bin\Debug\Calculate.pdb
+C:\Users\sbokubant\source\repos\ASP_Bank\Calculate\obj\Debug\Calculate.csprojAssemblyReference.cache
+C:\Users\sbokubant\source\repos\ASP_Bank\Calculate\obj\Debug\Calculate.csproj.CoreCompileInputs.cache
+C:\Users\sbokubant\source\repos\ASP_Bank\Calculate\obj\Debug\Calculate.dll
+C:\Users\sbokubant\source\repos\ASP_Bank\Calculate\obj\Debug\Calculate.pdb
+C:\Users\sbokubant\source\repos\ASP_BankWebApi\Calculate\bin\Debug\Calculate.dll
+C:\Users\sbokubant\source\repos\ASP_BankWebApi\Calculate\bin\Debug\Calculate.pdb
+C:\Users\sbokubant\source\repos\ASP_BankWebApi\Calculate\obj\Debug\Calculate.csprojAssemblyReference.cache
+C:\Users\sbokubant\source\repos\ASP_BankWebApi\Calculate\obj\Debug\Calculate.csproj.CoreCompileInputs.cache
+C:\Users\sbokubant\source\repos\ASP_BankWebApi\Calculate\obj\Debug\Calculate.dll
+C:\Users\sbokubant\source\repos\ASP_BankWebApi\Calculate\obj\Debug\Calculate.pdb

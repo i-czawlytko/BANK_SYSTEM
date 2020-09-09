@@ -1,0 +1,32 @@
+﻿<Window x:Class="BankADO.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankADO"
+        mc:Ignorable="d"
+        Title="AddWindow" Height="150" Width="350">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBox x:Name="nameBox" Margin="5" Grid.Column="1" Grid.Row="0"/>
+        <TextBox x:Name="lastnameBox" Margin="5" Grid.Column="1" Grid.Row="1"/>
+        <TextBox x:Name="dateBox" Margin="5" Grid.Column="1" Grid.Row="2"/>
+
+        <TextBlock x:Name="nameBlock" Margin="5" Text="str1" Grid.Column="0" Grid.Row="0"/>
+        <TextBlock x:Name="lastnameBlock" Margin="5" Text="str2" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock x:Name="dateBlock" Margin="5" Text="str3" Grid.Column="0" Grid.Row="2"/>
+
+        <Button x:Name="okBtn" Grid.Row="3" Grid.Column="0" Margin="10,5" Content="OK"/>
+        <Button x:Name="cancelBtn" Grid.Row="3" Grid.Column="1" Margin="10,5" Content="Отмена"/>
+    </Grid>
+</Window>

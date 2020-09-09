@@ -1,0 +1,66 @@
+﻿@using ASP_Bank.Entitys;
+
+@{
+    Layout = "_Layout";
+
+    <div>
+
+        <p>
+            Владелец: @ViewBag.owner_name
+        </p>
+
+        <p>
+            Сумма на счете: @ViewBag.CurrentAmount
+        </p>
+
+        <div>
+            <div class="handle_panel">
+                <form method="post">
+                    <input type="hidden" value=@ViewBag.AccID name="sender_id" />
+                    <input type="hidden" value="put" name="query_type" />
+
+                    <label>Сумма на счет:</label> <br />
+                    <input type="number" name="amount" /><br />
+
+                    <input type="submit" value="Положить" class="acc_button" width="200" /><br />
+                </form>
+            </div>
+
+            <div class="handle_panel">
+                <form method="post">
+                    <input type="hidden" value=@ViewBag.AccID name="sender_id" />
+                    <input type="hidden" value="withdraw" name="query_type" />
+
+                    <label>Сумма со счета:</label> <br />
+                    <input type="number" name="amount" /><br />
+
+                    <input type="submit" value="Снять" class="acc_button" width="200" /><br />
+
+                </form>
+            </div>
+
+            <div class="handle_panel">
+                <form method="post">
+                    <input type="hidden" value=@ViewBag.AccID name="sender_id" />
+                    <input type="hidden" value="transfer" name="query_type" />
+
+                    <label>Целевой ID:</label> <br />
+                    <input type="number" name="target_id" required/><br />
+
+                    <label>Сумма перевода:</label> <br />
+                    <input type="number" name="amount" required/><br />
+
+                    <input type="submit" value="Отправить" class="acc_button" width="200" /><br />
+                </form>
+            </div>
+        </div>
+
+        <p class="message_txt">*@ViewBag.Message</p>
+
+    </div>
+
+    }
+
+@section Menu {
+    <div class="acc_button"><a href="javascript:history.back()"> Назад</a></div>
+}

@@ -1,0 +1,40 @@
+﻿@model ASP_Bank.Auth.UserRegistration
+
+@{
+    Layout = "_Layout";
+}
+
+    <div>
+        <p>Регистрация</p>
+
+        <form asp-action="Register" asp-antiforgery="true">
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <p>
+                <input asp-for="LoginProp" placeholder="Логин" style="width:200px"/>
+            </p>
+
+
+            <p>
+                <input asp-for="Password" placeholder="Пароль" style="width:200px"/>
+            </p>
+
+
+            <p>
+                <input asp-for="ConfirmPassword" placeholder="Продублируйте пароль" style="width:200px"/>
+            </p>
+
+
+            <p>
+                <button type="submit" class="acc_button" style="width:200px">Зарегистрироваться</button>
+            </p>
+        </form>
+    </div>
+
+
+@section Menu {
+
+}
+
+
+

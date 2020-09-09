@@ -1,0 +1,31 @@
+﻿@using ASP_Bank.Entitys;
+
+@{
+    Layout = "_Layout";
+}
+
+<div>
+    <form action="GetAccFromViewField" method="post">
+        <input type="hidden" value="deposit" name="acc_type" />
+        <input type="hidden" value=@ViewBag.ClientType name="client_type" />
+        <input type="hidden" value=@ViewBag.ClientID name="client_id" />
+
+        <label>Проценты:</label> <br />
+        <input type="number" name="new_percent" min="0" max="100" required/><br />
+
+        <label>Сумма:</label> <br />
+        <input type="number" name="new_amount" min="0" max="9999999999999999" required/><br />
+
+        <label>Капитализация:</label> @Html.CheckBox("new_cap", false)<br />
+
+        <p>
+            <input type="submit" class="add_button" style="width:200px" value="Добавить" />
+        </p>
+        
+    </form>
+</div>
+
+
+@section Menu {
+    <div class="acc_button"><a href="javascript:history.back()"> Назад</a></div>
+    }

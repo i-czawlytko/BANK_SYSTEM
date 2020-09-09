@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище BankDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CompanyClients">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="company_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="create_date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Credits">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="owner_id" Type="int" Nullable="false" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="create_date" Type="date" Nullable="false" />
+    <Property Name="percent" Type="int" Nullable="false" />
+    <Property Name="owner_type" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Deposit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="owner_id" Type="int" Nullable="false" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="create_date" Type="date" Nullable="false" />
+    <Property Name="cap" Type="bit" Nullable="false" />
+    <Property Name="owner_type" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="percent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Giros">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="owner_id" Type="int" Nullable="false" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="create_date" Type="date" Nullable="false" />
+    <Property Name="owner_type" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhysClients">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="client_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="birth_date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище BankDBModelContainer">
+    <EntitySet Name="CompanyClients" EntityType="Self.CompanyClients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Credits" EntityType="Self.Credits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deposit" EntityType="Self.Deposit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Giros" EntityType="Self.Giros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhysClients" EntityType="Self.PhysClients" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

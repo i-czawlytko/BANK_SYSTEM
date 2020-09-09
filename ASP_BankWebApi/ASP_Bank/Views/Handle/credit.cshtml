@@ -1,0 +1,44 @@
+﻿@using ASP_Bank.Entitys;
+
+@{
+    Layout = "_Layout";
+}
+
+<div>
+
+    <p>
+        Владелец: @ViewBag.owner_name
+    </p>
+
+    <p>
+        Кредит на сумму: @ViewBag.CurrentCredit.amount
+    </p>
+
+    <p>
+        Процент: @ViewBag.CurrentCredit.percent
+    </p>
+
+    <p>
+        Дата открытия: @ViewBag.CurrentCredit.create_date.ToString("dd.MM.yyyy")
+    </p>
+
+    <form method="post">
+
+        <label>Предполагаемая дата закрытия кредита:</label> <br />
+        <input type="date" name="est_date" required/><br />
+
+        <p>
+            <input type="submit" value="Рассчитать" class="acc_button" style="width:200px"/>
+        </p>
+        
+    </form>
+
+    <p>
+        Сумма на депозите к расчетной дате будет составлять: @ViewBag.EstAmount
+    </p>
+</div>
+
+
+@section Menu {
+    <div class="acc_button"><a href="javascript:history.back()"> Назад</a></div>
+}

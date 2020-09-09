@@ -1,0 +1,14 @@
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\bin\Debug\netcoreapp2.1\BankWebApi.deps.json
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\bin\Debug\netcoreapp2.1\BankWebApi.runtimeconfig.json
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\bin\Debug\netcoreapp2.1\BankWebApi.runtimeconfig.dev.json
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\bin\Debug\netcoreapp2.1\BankWebApi.dll
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\bin\Debug\netcoreapp2.1\BankWebApi.pdb
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\obj\Debug\netcoreapp2.1\BankWebApi.csprojAssemblyReference.cache
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\obj\Debug\netcoreapp2.1\BankWebApi.csproj.CoreCompileInputs.cache
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\obj\Debug\netcoreapp2.1\BankWebApi.RazorAssemblyInfo.cache
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\obj\Debug\netcoreapp2.1\BankWebApi.RazorAssemblyInfo.cs
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\obj\Debug\netcoreapp2.1\BankWebApi.AssemblyInfoInputs.cache
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\obj\Debug\netcoreapp2.1\BankWebApi.AssemblyInfo.cs
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\obj\Debug\netcoreapp2.1\BankWebApi.RazorTargetAssemblyInfo.cache
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\obj\Debug\netcoreapp2.1\BankWebApi.dll
+C:\Users\sbokubant\source\repos\BankWebApi\BankWebApi\obj\Debug\netcoreapp2.1\BankWebApi.pdb

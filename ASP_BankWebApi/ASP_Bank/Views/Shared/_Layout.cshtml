@@ -1,0 +1,55 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <title>Банковская система</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/styles.css">
+</head>
+
+
+<body>
+    <div id="up_bar">
+        <div class="fixed_container">
+            <div style="text-align: center;">
+                Банковская система
+            </div>
+        </div>
+
+        <nav>
+            <div> @await Component.InvokeAsync("LogoutView") </div>
+        </nav>
+    </div>
+
+    <div id="main_menu">
+        <div class="fixed_container">
+            <nav>
+                <a href="/Bank/Clients?client_type=phys" class="main_button">
+                    Физические лица
+                </a>
+                /
+                <a href="/Bank/Clients?client_type=company" class="main_button">
+                    Юридические лица
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="fixed_container">
+        <div id="main_section">
+            <div id="all_menu">
+                @RenderSection("Menu")
+            </div>
+
+            <div id="main_content">
+                @RenderBody()
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
