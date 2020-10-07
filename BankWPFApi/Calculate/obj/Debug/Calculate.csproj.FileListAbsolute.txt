@@ -40,3 +40,9 @@ C:\Users\sbokubant\source\BankWPFApi\Calculate\obj\Debug\Calculate.csprojAssembl
 C:\Users\sbokubant\source\BankWPFApi\Calculate\obj\Debug\Calculate.csproj.CoreCompileInputs.cache
 C:\Users\sbokubant\source\BankWPFApi\Calculate\obj\Debug\Calculate.dll
 C:\Users\sbokubant\source\BankWPFApi\Calculate\obj\Debug\Calculate.pdb
+C:\local_repos\BANK_SYSTEM\BankWPFApi\Calculate\bin\Debug\Calculate.dll
+C:\local_repos\BANK_SYSTEM\BankWPFApi\Calculate\bin\Debug\Calculate.pdb
+C:\local_repos\BANK_SYSTEM\BankWPFApi\Calculate\obj\Debug\Calculate.csprojAssemblyReference.cache
+C:\local_repos\BANK_SYSTEM\BankWPFApi\Calculate\obj\Debug\Calculate.csproj.CoreCompileInputs.cache
+C:\local_repos\BANK_SYSTEM\BankWPFApi\Calculate\obj\Debug\Calculate.dll
+C:\local_repos\BANK_SYSTEM\BankWPFApi\Calculate\obj\Debug\Calculate.pdb
