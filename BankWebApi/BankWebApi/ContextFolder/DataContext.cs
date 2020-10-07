@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BankWebApi.Entitys;
 using Microsoft.EntityFrameworkCore;
-using BankWebApi.Entitys;
 
 
 namespace BankWebApi.ContextFolder
