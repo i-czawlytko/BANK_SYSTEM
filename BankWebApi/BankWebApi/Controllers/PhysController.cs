@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BankWebApi.Entitys;
 using BankWebApi.ContextFolder;
+using BankWebApi.Reposes;
 
 namespace BankWebApi.Controllers
 {
@@ -12,29 +13,31 @@ namespace BankWebApi.Controllers
     [ApiController]
     public class PhysController : ControllerBase
     {
+        private IPhysRepository repository;
+
+        public PhysController(IPhysRepository repo)
+        {
+            repository = repo;
+        }
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<PhysClients>> Get()
+        public IEnumerable<PhysClients> Get()
         {
-            return new DataContext().PhysClients;
+            return repository.Physes;
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public PhysClients Get(int id)
         {
-            return new DataContext().PhysClients.FirstOrDefault(e => e.id == id);
+            return repository.Get(id);
         }
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody] PhysClients client)
         {
-            using (var db = new DataContext())
-            {
-                db.PhysClients.Add(client);
-                 db.SaveChanges();
-            }
+            repository.Add(client);
         }
 
         // PUT api/values/5

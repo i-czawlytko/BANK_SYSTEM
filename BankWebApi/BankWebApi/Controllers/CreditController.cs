@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using BankWebApi.Entitys;
 using BankWebApi.ContextFolder;
+using BankWebApi.Reposes;
 
 namespace BankWebApi.Controllers
 {
@@ -13,29 +14,31 @@ namespace BankWebApi.Controllers
     [ApiController]
     public class CreditController : ControllerBase
     {
+        private ICreditRepository repository;
+
+        public CreditController(ICreditRepository repo)
+        {
+            repository = repo;
+        }
         // GET: api/Credit
         [HttpGet]
         public IEnumerable<Credits> Get()
         {
-            return new DataContext().Credits;
+            return repository.Credits;
         }
 
         // GET: api/Credit/5
         [HttpGet("{id}")]
         public Credits Get(int id)
         {
-            return new DataContext().Credits.FirstOrDefault(e => e.id == id);
+            return repository.Get(id);
         }
 
         // POST: api/Credit
         [HttpPost]
         public void Post([FromBody] Credits acc)
         {
-            using (var db = new DataContext())
-            {
-                db.Credits.Add(acc);
-                db.SaveChanges();
-            }
+            repository.Add(acc);
         }
 
         // PUT: api/Credit/5

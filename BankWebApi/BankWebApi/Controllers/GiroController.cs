@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using BankWebApi.Entitys;
 using BankWebApi.ContextFolder;
+using BankWebApi.Reposes;
 
 namespace BankWebApi.Controllers
 {
@@ -13,42 +14,38 @@ namespace BankWebApi.Controllers
     [ApiController]
     public class GiroController : ControllerBase
     {
+        private IGiroRepository repository;
+
+        public GiroController(IGiroRepository repo)
+        {
+            repository = repo;
+        }
         // GET: api/Giro
         [HttpGet]
         public IEnumerable<Giros> Get()
         {
-            return new DataContext().Giros;
+            return repository.Giros;
         }
 
         // GET: api/Giro/5
         [HttpGet("{id}")]
         public Giros Get(int id)
         {
-            return new DataContext().Giros.FirstOrDefault(e => e.id == id);
+            return repository.Get(id);
         }
 
         // POST: api/Giro
         [HttpPost]
         public void Post([FromBody] Giros acc)
         {
-            using (var db = new DataContext())
-            {
-                db.Giros.Add(acc);
-                db.SaveChanges();
-            }
+            repository.Add(acc);
         }
 
         // PUT: api/Giro/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Giros new_acc)
         {
-            using (var db = new DataContext())
-            {
-                Giros old_acc = db.Giros.FirstOrDefault(e => e.id == id);
-                old_acc.amount = new_acc.amount;
-                db.SaveChanges();
-            }
-
+            repository.Put(id,new_acc);
         }
 
         // DELETE: api/ApiWithActions/5

@@ -26,6 +26,10 @@ namespace BankWebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddTransient<ICompanyRepository, EFCompanies>();
+            services.AddTransient<IPhysRepository, EFPhyses>();
+            services.AddTransient<IGiroRepository, EFGiros>();
+            services.AddTransient<IDeposRepository, EFDepos>();
+            services.AddTransient<ICreditRepository, EFCredits>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
